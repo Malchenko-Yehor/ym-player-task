@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentSong, setSongTime } from 'store/actions';
+import { setCurrentSong } from 'store/actions';
 
 import { ReactComponent as PreviousIcon } from 'assets/images/previous_ico.svg';
 

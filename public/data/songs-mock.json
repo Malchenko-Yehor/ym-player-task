@@ -9,30 +9,30 @@
     "name": "Some song 2",
     "author": "Again Kanye West",
     "coverUrl": "./media/images/cover-1.png",
-    "duration": 90
+    "duration": 6
   },
   {
     "name": "Steel Panther 3",
     "author": "Feel the Steel",
     "coverUrl": "./media/images/cover.png",
-    "duration": 25
+    "duration": 200
   },
   {
     "name": "Self Conscious 4",
     "author": "Kanye West",
     "coverUrl": "./media/images/unreleased_cover.png",
-    "duration": 30
+    "duration": 8
   },
   {
     "name": "Some song 5",
     "author": "Again Kanye West",
     "coverUrl": "./media/images/cover-1.png",
-    "duration": 10
+    "duration": 9
   },
   {
     "name": "Steel Panther 6",
     "author": "Feel the Steel",
     "coverUrl": "./media/images/cover.png",
-    "duration": 200
+    "duration": 5
   }
 ]

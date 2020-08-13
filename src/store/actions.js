@@ -10,3 +10,5 @@ export const setCurrentSong = payload => ({ type: 'SET_CURRENT_SONG', payload })
 
 export const setSongTime = payload => ({ type: 'SET_SONG_TIME', payload });
 
+export const setShuffledSongsIndexes = payload => ({ type: 'SET_SHUFFLED_SONGS', payload });
+

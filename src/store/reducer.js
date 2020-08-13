@@ -4,7 +4,8 @@ const initialState = {
   shuffle: false,
   songs: [],
   currentSongIndex: 0,
-  currentSongTime: 0
+  currentSongTime: 0,
+  shuffledSongsIndexes: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -30,6 +31,9 @@ const reducer = (state = initialState, action) => {
 
     case 'SET_SONG_TIME':
       return { ...state, currentSongTime: action.payload }
+
+    case 'SET_SHUFFLED_SONGS':
+      return { ...state, shuffledSongsIndexes: action.payload }
 
     default:
       return state;

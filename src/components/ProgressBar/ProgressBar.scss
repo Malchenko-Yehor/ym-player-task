@@ -1,0 +1,54 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.progress-bar {
+  width: 7 * $col-width;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include center;
+
+  &__current-time,
+  &__duration {
+    width: 40px;
+    color: $c-lightgrey;
+    font-size: 18px;
+  }
+
+  &__duration {
+    text-align: right;
+  }
+
+  &__bar {
+    position: relative;
+    width: 5 / 7 * 100%;
+  }
+
+  &__current-progress {
+    position: absolute;
+    top: -2px;
+    height: 5px;
+    width: 100%;
+    background-color: $c-cyan;
+    transform-origin: left center;
+    transform: scaleX(0.5);
+    transition: transform 1s linear;
+  }
+
+  &__progress {
+    position: relative;
+    height: 1px;
+    width: 100%;
+    background-color: $c-cyan;
+
+    &::after {
+      @include pseudo();
+      right: 0;
+      top: -2px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $c-cyan;
+    }
+  }
+}

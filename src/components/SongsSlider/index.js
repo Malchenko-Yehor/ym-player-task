@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCurrentSong } from '../../store/actions'
+import { setCurrentSong } from 'store/actions'
 
 import 'swiper/swiper.scss';
 import './SongsSlider.scss';
 
 const SongsSlider = () => {
   const dispatch = useDispatch();
+  const [swiperInstance, setSwiper] = useState(null);
+  const currentSongIndex = useSelector(state => state.currentSongIndex);
   const songs = useSelector(state => state.songs);
   const slides = createSlides(songs);
+
+  useEffect(() => {
+    if (swiperInstance && swiperInstance.realIndex !== currentSongIndex) {
+      swiperInstance.slideTo(currentSongIndex);
+    }
+  }, [currentSongIndex, swiperInstance])
 
   return (
     <div className="songs-slider">
@@ -17,10 +25,9 @@ const SongsSlider = () => {
         <Swiper
           slidesPerView="auto"
           speed={500}
-          loop={true}
           centeredSlides={true}
           onSlideChange={swiper => dispatch(setCurrentSong(swiper.realIndex))}
-          onSwiper={(swiper) => console.log(swiper)}
+          onSwiper={swiper => setSwiper(swiper)}
         >
           {slides}
         </Swiper>

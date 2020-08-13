@@ -1,17 +1,24 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { loadSongs } from '../../store/actions';
-import fetchLocalJSON from '../../helpers/file-fetch';
+import { loadSongs, setSongTime, setCurrentSong } from 'store/actions';
+import fetchLocalJSON from 'helpers/file-fetch';
 
 import SongsSlider from '../SongsSlider';
-import { ShuffleButton, PreviousSongButton, NextSongButton, PlayButton, RepeatButton } from '../PlayerButtons';
+import ProgressBar from '../ProgressBar';
+import ShuffleButton from '../PlayerButtons/ShuffleButton';
+import PreviousSongButton from '../PlayerButtons/PreviousSongButton';
+import NextSongButton from '../PlayerButtons/NextSongButton';
+import PlayButton from '../PlayerButtons/PlayButton';
+import RepeatButton from '../PlayerButtons/RepeatButton';
 
 import './Player.scss'
 
 const Player = () => {
   const songs = useSelector(state => state.songs);
+  const playing = useSelector(state => state.playing);
   const currentSongIndex = useSelector(state => state.currentSongIndex);
-  const currentSong = songs[currentSongIndex]
+  const currentSongTime = useSelector(state => state.currentSongTime);
+  const currentSong = songs[currentSongIndex];
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,7 +29,25 @@ const Player = () => {
     };
 
     fetchSongsData();
-  }, []);
+  }, [dispatch]);
+
+  useEffect(() => {
+    let playingInterval = null;
+
+    if (playing) {
+      playingInterval = setInterval(() => {
+        dispatch(setSongTime(currentSongTime + 1));
+
+        if (currentSongTime >= currentSong.duration) {
+          dispatch(setCurrentSong(currentSongIndex + 1))
+        }
+      }, 1000);
+    } else {
+      clearInterval(playingInterval);
+    }
+
+    return () => clearInterval(playingInterval);
+  }, [playing, currentSongTime, currentSongIndex]);
 
   return (
     <div className="player">
@@ -38,6 +63,8 @@ const Player = () => {
         <NextSongButton />
         <RepeatButton />
       </div>
+
+      <ProgressBar />
     </div>
   );
 };

@@ -1,0 +1,11 @@
+.play-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 165px;
+  height: 172px;
+
+  &.is-active img {
+    transform: translate(5px, -1px);
+  }
+}

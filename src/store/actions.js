@@ -2,13 +2,11 @@ export const loadSongs = payload => ({ type: 'SONGS_LOADED', payload });
 
 export const setPlaying = payload => ({ type: 'SET_PLAYING', payload });
 
-export const shuffleOn = () => ({ type: 'SHUFFLE_ON' });
+export const setShuffle = payload => ({ type: 'SET_SHUFFLE', payload });
 
-export const shuffleOff = () => ({ type: 'SHUFFLE_OFF' });
-
-export const repeatOn = () => ({ type: 'REPEAT_ON' });
-
-export const repeatOff = () => ({ type: 'REPEAT_OFF' });
+export const setRepeat = payload => ({ type: 'SET_REPEAT', payload });
 
 export const setCurrentSong = payload => ({ type: 'SET_CURRENT_SONG', payload });
+
+export const setSongTime = payload => ({ type: 'SET_SONG_TIME', payload });
 

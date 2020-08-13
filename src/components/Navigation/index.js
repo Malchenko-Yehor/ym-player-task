@@ -1,6 +1,6 @@
 import React from 'react';
-import { ReactComponent as BackIcon } from '../../assets/images/back_ico.svg';
-import { ReactComponent as MoreIcon } from '../../assets/images/more_ico.svg';
+import { ReactComponent as BackIcon } from 'assets/images/back_ico.svg';
+import { ReactComponent as MoreIcon } from 'assets/images/more_ico.svg';
 
 import './Navigation.scss'
 

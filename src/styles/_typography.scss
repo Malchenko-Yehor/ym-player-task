@@ -1,8 +1,11 @@
 @import './variables';
 
-h1, h2, h3 {
+* {
   font-family: 'Gilroy', Arial, Helvetica, sans-serif;
   font-weight: 300;
+}
+
+h1, h2, h3 {
   margin: 0;
   text-align: center;
 }

@@ -1,18 +1,36 @@
 [
   {
-    "name": "Self Conscious",
+    "name": "Self Conscious 1",
     "author": "Kanye West",
     "coverUrl": "./media/images/unreleased_cover.png",
-    "duration": 261
+    "duration": 5
   },
   {
-    "name": "Some song",
+    "name": "Some song 2",
     "author": "Again Kanye West",
     "coverUrl": "./media/images/cover-1.png",
-    "duration": 300
+    "duration": 90
   },
   {
-    "name": "Steel Panther",
+    "name": "Steel Panther 3",
+    "author": "Feel the Steel",
+    "coverUrl": "./media/images/cover.png",
+    "duration": 25
+  },
+  {
+    "name": "Self Conscious 4",
+    "author": "Kanye West",
+    "coverUrl": "./media/images/unreleased_cover.png",
+    "duration": 30
+  },
+  {
+    "name": "Some song 5",
+    "author": "Again Kanye West",
+    "coverUrl": "./media/images/cover-1.png",
+    "duration": 10
+  },
+  {
+    "name": "Steel Panther 6",
     "author": "Feel the Steel",
     "coverUrl": "./media/images/cover.png",
     "duration": 200

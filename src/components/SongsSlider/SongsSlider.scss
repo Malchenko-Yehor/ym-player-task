@@ -1,0 +1,28 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.songs-slider {
+  .swiper-slide {
+    width: 7 * $col-width;
+  }
+
+  &__cover {
+    @include center;
+    display: block;
+    border-radius: 50%;
+    width: 5 / 7 * 100%;
+    transition: transform 0.5s, margin 0.5s;
+  }
+
+  .swiper-slide-next {
+    .songs-slider__cover {
+      transform: translateX(-50%) scale((2 / 5));
+    }
+  }
+
+  .swiper-slide-prev {
+    .songs-slider__cover {
+      transform: translateX(50%) scale((2 / 5));
+    }
+  }
+}

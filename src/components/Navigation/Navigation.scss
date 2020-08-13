@@ -1,0 +1,37 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+$button-padding: 10px;
+
+.navigation {
+  @include center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 7 * $col-width;
+  position: relative;
+  z-index: $zi-medium;
+  padding-top: 45px;
+
+  &__back-button {
+    width: 16px + $button-padding * 2;
+    height: 30px + $button-padding * 2;
+    padding: $button-padding;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__more-button {
+    width: 4px + $button-padding * 2;
+    height: 30px + $button-padding * 2;
+    padding: $button-padding;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

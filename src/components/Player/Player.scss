@@ -1,0 +1,25 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.player {
+  padding-top: 91px;
+
+  &__song-name,
+  &__author,
+  &__buttons {
+    @include center;
+    width: 7 * $col-width;
+  }
+
+  &__song-name {
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+  }
+}

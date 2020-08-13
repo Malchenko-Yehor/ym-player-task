@@ -1,0 +1,27 @@
+@import './variables';
+
+h1, h2, h3 {
+  font-family: 'Gilroy', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  margin: 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 36px;
+  color: $c-white;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+  color: $c-white;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 36px;
+  color: $c-purple;
+}

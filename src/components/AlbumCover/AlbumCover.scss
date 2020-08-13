@@ -1,0 +1,19 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.album-cover {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  height: 46%;
+  background-color: $c-purple-dark;
+  background-size: cover;
+  background-position: center center;
+
+  &::after {
+    @include pseudo;
+    @include absoluteFill;
+    background: linear-gradient(to top, $c-purple-dark, rgba($c-purple-dark, 0.85)); ;
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Self Conscious",
+    "author": "Kanye West",
+    "coverUrl": "./media/images/unreleased_cover.png",
+    "duration": 261
+  },
+  {
+    "name": "Some song",
+    "author": "Again Kanye West",
+    "coverUrl": "./media/images/cover-1.png",
+    "duration": 300
+  },
+  {
+    "name": "Steel Panther",
+    "author": "Feel the Steel",
+    "coverUrl": "./media/images/cover.png",
+    "duration": 200
+  }
+]

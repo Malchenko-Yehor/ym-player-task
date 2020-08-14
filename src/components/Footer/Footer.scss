@@ -1,0 +1,97 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.footer {
+  background-color: $c-white;
+  height: 88px;
+
+  &__container {
+    padding: 25px 0;
+    @include center;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    width: 7 * $col-width;
+  }
+
+  &__playlist-button {
+    width: 30px;
+    height: 20px;
+
+    @include respond-to(large) {
+      width: 36px;
+      height: 26px;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__next-song {
+    padding-left: 25px;
+    flex-grow: 1;
+
+    @include respond-to(small) {
+      padding-left: 44px;
+    }
+  }
+
+  &__next-label {
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 2px;
+
+    @include respond-to(small) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__song-name {
+    margin-right: 17px;
+    line-height: 1;
+    font-size: 16px;
+    color: #1b1b1b;
+
+    @include respond-to(small) {
+      font-size: 20px;
+    }
+  }
+
+  &__song-duration {
+    margin-left: 17px;
+    font-size: 20px;
+    line-height: 1;
+    color: $c-purple;
+
+    @include respond-to(small) {
+      font-size: 24px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__dots {
+    overflow: hidden;
+    position: relative;
+    height: 10px;
+    flex-grow: 1;
+
+    &::after {
+      content: '.........................................................................................................................';
+      position: absolute;
+      line-height: 0;
+      display: block;
+      bottom: 9px;
+      letter-spacing: 8px;
+      color: #cacaca;
+
+    }
+  }
+}

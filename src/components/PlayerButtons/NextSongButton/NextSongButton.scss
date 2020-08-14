@@ -1,8 +1,16 @@
 @import 'styles/variables';
+@import 'styles/mixins';
 
 .next-song-button {
-  width: 30px;
-  height: 26px;
+  position: relative;
+  z-index: $zi-bottom;
+  width: 23px;
+  height: 20px;
+
+  @include respond-to(small) {
+    width: 30px;
+    height: 26px;
+  }
 
   svg {
     width: 100%;

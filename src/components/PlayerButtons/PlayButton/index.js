@@ -11,7 +11,6 @@ import './PlayButton.scss'
 const PlayButton = () => {
   const dispatch = useDispatch();
   const playing = useSelector(state => state.playing);
-  const iconUrl = playing ? playActive : playInactive;
   const playButtonClass = classnames('play-button', { 'is-active': playing });
 
   const onPlayClick = () => {
@@ -20,7 +19,8 @@ const PlayButton = () => {
 
   return (
     <button className={playButtonClass} onClick={onPlayClick}>
-      <img src={iconUrl} alt="play" />
+      <img className="play-button__icon" src={playInactive} alt="play" />
+      <img className="play-button__icon play-button__icon--active" src={playActive} alt="play" />
     </button>
   )
 };

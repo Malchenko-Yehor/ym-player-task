@@ -4,6 +4,10 @@
 .songs-slider {
   .swiper-slide {
     width: 7 * $col-width;
+
+    @include respond-to(medium) {
+      width: 1.5 * $col-width;
+    }
   }
 
   &__cover {
@@ -14,15 +18,39 @@
     transition: transform 0.5s, margin 0.5s;
   }
 
+  .swiper-slide {
+    .songs-slider__cover {
+      @include respond-to(medium) {
+        transform: scale(0.6);
+      }
+    }
+  }
+
+  .swiper-slide-active {
+    .songs-slider__cover {
+      @include respond-to(medium) {
+        transform: scale(1);
+      }
+    }
+  }
+
   .swiper-slide-next {
     .songs-slider__cover {
       transform: translateX(-50%) scale((2 / 5));
+
+      @include respond-to(medium) {
+        transform: scale(0.6);
+      }
     }
   }
 
   .swiper-slide-prev {
     .songs-slider__cover {
       transform: translateX(50%) scale((2 / 5));
+
+      @include respond-to(medium) {
+        transform: scale(0.6);
+      }
     }
   }
 }

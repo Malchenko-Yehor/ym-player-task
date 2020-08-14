@@ -27,7 +27,7 @@ export const usePlayMusic = () => {
           const nextSong = currentSongIndex === songs.length - 1 ? 0 : currentSongIndex + 1;
           const nextShuffleSong = shuffledSongsIndexes[0];
 
-          if (shuffle) {
+          if (shuffle && !repeat) {
             const restOfShuffleSongs = shuffledSongsIndexes.slice(1);
 
             if (!restOfShuffleSongs.length) {
@@ -76,4 +76,24 @@ export const useCurrentSong = () => {
   const currentSong = songs[currentSongIndex];
 
   return currentSong;
+};
+
+export const useNextSong = () => {
+  const songs = useSelector(state => state.songs);
+  const lastSongIndex = songs.length - 1;
+  const currentSongIndex = useSelector(state => state.currentSongIndex);
+  const nextSong = currentSongIndex !== lastSongIndex
+    ? songs[currentSongIndex + 1]
+    : songs[0];
+
+  return nextSong;
+};
+
+export const useNextShuffleSong = () => {
+  const songs = useSelector(state => state.songs);
+  const shuffledSongsIndexes = useSelector(state => state.shuffledSongsIndexes);
+  const nextShuffleSongIndex = shuffledSongsIndexes[0];
+  const nextShuffleSong = songs[nextShuffleSongIndex];
+
+  return nextShuffleSong;
 };

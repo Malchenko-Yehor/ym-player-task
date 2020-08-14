@@ -1,8 +1,14 @@
 @import 'styles/variables';
+@import 'styles/mixins';
 
 .shuffle-button {
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
+
+  @include respond-to(small) {
+    width: 26px;
+    height: 26px;
+  }
 
   svg {
     width: 100%;

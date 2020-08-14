@@ -1,11 +1,40 @@
+@import 'styles/mixins';
+
 .play-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 165px;
-  height: 172px;
+  width: 100px;
+  height: 100px;
 
-  &.is-active img {
-    transform: translate(5px, -1px);
+  &__icon {
+    width: 100%;
+    height: auto;
+
+    &--active {
+      width: 163px;
+      height: 163px;
+      transform: translate(3px, -1px);
+      display: none;
+
+      @include respond-to(small) {
+        width: unset;
+        height: unset;
+        transform: translate(5px, -1px);
+      }
+    }
+  }
+
+  @include respond-to(small) {
+      width: 165px;
+      height: 172px;
+  }
+
+  &.is-active &__icon {
+    display: none;
+
+    &--active {
+      display: block;
+    }
   }
 }

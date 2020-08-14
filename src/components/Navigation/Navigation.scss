@@ -11,12 +11,17 @@ $button-padding: 10px;
   width: 7 * $col-width;
   position: relative;
   z-index: $zi-medium;
-  padding-top: 45px;
+  padding-top: 15px;
+
+  @include respond-to(small) {
+    padding-top: 45px;
+  }
 
   &__back-button {
     width: 16px + $button-padding * 2;
     height: 30px + $button-padding * 2;
     padding: $button-padding;
+    margin-left: -$button-padding;
 
     svg {
       width: 100%;
@@ -28,6 +33,7 @@ $button-padding: 10px;
     width: 4px + $button-padding * 2;
     height: 30px + $button-padding * 2;
     padding: $button-padding;
+    margin-right: -$button-padding;
 
     svg {
       width: 100%;
